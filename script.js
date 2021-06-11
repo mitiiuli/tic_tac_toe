@@ -49,6 +49,9 @@ function playerVsPlayer(i) {
     }
 }
 function playareaClicked(i) {
+    if (occupied[i - 1]) {
+        return;
+    }
     occupied[i - 1] = 1;
     moves++;
     var x = document.getElementById(i);
@@ -65,10 +68,10 @@ function restartClicked() {
     for (var i = 1; i <= 9; i++) {
         x = document.getElementById(i);
         x.innerHTML = '';
-        }
+    }
     for (var i = 0; i < 10; i++) {
         occupied[i] = 0;
-        }
+    }
     player1 = [];
     player2 = [];
 }
