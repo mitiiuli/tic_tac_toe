@@ -1,5 +1,4 @@
 
-var level = 0;
 var moves = 0;
 var occupied = [0, 0, 0, 0, 0, 0, 0, 0, 0];
 var magicsquare = [2, 7, 6, 9, 5, 1, 4, 3, 8];
@@ -56,11 +55,9 @@ function playareaClicked(i) {
     moves++;
     var x = document.getElementById(i);
     var zeroOne;
-    if (level === 0) {
-        zeroOne = moves % 2;
-        x.innerHTML = '<img src="' + zeroOne + '.png" width="75%">';
-        playerVsPlayer(i);
-    } 
+    zeroOne = moves % 2;
+    x.innerHTML = '<img src="' + zeroOne + '.png" width="75%">';
+    playerVsPlayer(i);
 }
 function restartClicked() {
     moves = 0;
